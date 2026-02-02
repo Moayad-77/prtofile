@@ -1,0 +1,16 @@
+# C# Course folders (not part of portfolio)
+CSharp-Course/
+csharpp/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Misc
+*.log
+*.tmp
