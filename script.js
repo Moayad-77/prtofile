@@ -149,4 +149,89 @@ if (heroTitle) {
     }, 300);
 }
 
-console.log('Portfolio loaded successfully! 🚀');
+// Rotating Typing Effect
+const typingElement = document.querySelector('.typing-text');
+if (typingElement) {
+    const roles = [
+        'Full-Stack Developer',
+        'AI Integration Specialist',
+        'PHP Developer',
+        'Problem Solver',
+        'Team Player'
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
+
+    function typeRole() {
+        const currentRole = roles[roleIndex];
+
+        if (isDeleting) {
+            typingElement.textContent = currentRole.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 50;
+        } else {
+            typingElement.textContent = currentRole.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 100;
+        }
+
+        if (!isDeleting && charIndex === currentRole.length) {
+            typingSpeed = 2000; // Pause at end
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typingSpeed = 500; // Pause before next word
+        }
+
+        setTimeout(typeRole, typingSpeed);
+    }
+
+    // Start typing after page load
+    setTimeout(typeRole, 1500);
+}
+
+// Add parallax effect to hero
+const heroBg = document.querySelector('.hero-bg');
+if (heroBg) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+    });
+}
+
+// Animate stats numbers
+const statNumbers = document.querySelectorAll('.stat-number');
+const animateNumber = (el) => {
+    const target = parseInt(el.textContent);
+    let current = 0;
+    const increment = target / 50;
+    const suffix = el.textContent.includes('+') ? '+' : '';
+    const hasPercent = el.textContent.includes('%');
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        el.textContent = Math.floor(current) + (hasPercent ? '%+' : suffix);
+    }, 30);
+};
+
+// Observe stats for animation
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            statNumbers.forEach(animateNumber);
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const aboutSection = document.getElementById('about');
+if (aboutSection) statsObserver.observe(aboutSection);
+
+console.log('Portfolio loaded successfully! 🚀 - Enhanced Edition');
