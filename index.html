@@ -5,38 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Moayad Hussam Alshawesh — Full-Stack Developer & AI Specialist. An antigravity portfolio experience that defies convention.">
+        content="Moayad Hussam Alshawesh — Full-Stack Developer & AI Specialist. An antigravity portfolio experience.">
     <title>Moayad Alshawesh | Antigravity Portfolio</title>
 
-    <!-- Google Fonts: Outfit (light weights) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
-
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- ============ COSMIC BACKGROUND LAYERS ============ -->
-    <div class="cosmos-bg" id="cosmos-bg">
-        <div class="nebula-layer nebula-1"></div>
-        <div class="nebula-layer nebula-2"></div>
-        <div class="nebula-layer nebula-3"></div>
-        <canvas id="star-field"></canvas>
+    <!-- ===== COSMIC BACKGROUND ===== -->
+    <div class="cosmos-bg">
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+        <div class="nebula nebula-3"></div>
+        <canvas id="starfield"></canvas>
     </div>
 
-    <!-- Floating cosmic dust particles -->
-    <div class="cosmic-dust" id="cosmic-dust"></div>
+    <!-- ===== FLOATING PARTICLES ===== -->
+    <canvas id="particles-canvas"></canvas>
 
-    <!-- ============ NAVIGATION ============ -->
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#hero" class="nav-logo">
-                <span class="logo-glow">&lt;</span>AG<span class="logo-glow">/&gt;</span>
+                <span class="cyan">&lt;</span>AG<span class="cyan">/&gt;</span>
             </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -55,114 +51,84 @@
         </div>
     </nav>
 
-    <!-- ============ HERO SECTION ============ -->
+    <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
-        <canvas id="hero-particles"></canvas>
+        <div class="hero-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="orb orb-4"></div>
+        </div>
         <div class="hero-content">
-            <div class="hero-text-wrapper" data-float-speed="0.5">
-                <p class="hero-greeting" id="hero-greeting">
-                    <span class="greeting-particle">W</span><span class="greeting-particle">e</span><span
-                        class="greeting-particle">l</span><span class="greeting-particle">c</span><span
-                        class="greeting-particle">o</span><span class="greeting-particle">m</span><span
-                        class="greeting-particle">e</span><span class="greeting-particle">&nbsp;</span><span
-                        class="greeting-particle">t</span><span class="greeting-particle">o</span><span
-                        class="greeting-particle">&nbsp;</span><span class="greeting-particle">m</span><span
-                        class="greeting-particle">y</span><span class="greeting-particle">&nbsp;</span><span
-                        class="greeting-particle">o</span><span class="greeting-particle">r</span><span
-                        class="greeting-particle">b</span><span class="greeting-particle">i</span><span
-                        class="greeting-particle">t</span>
-                </p>
-                <h1 class="hero-title" id="hero-title">
-                    <span class="title-line">Moayad Hussam</span>
-                    <span class="title-line title-highlight">Alshawesh</span>
-                </h1>
-                <div class="hero-role-container">
-                    <span class="role-prefix">I craft</span>
-                    <span class="typing-text" id="typing-text"></span>
-                    <span class="typing-cursor">|</span>
-                </div>
-                <p class="hero-tagline">Designing experiences that defy gravity</p>
+            <p class="hero-greeting anim-fade-up" style="animation-delay: 0.2s">
+                <span class="wave-text">W e l c o m e &nbsp; t o &nbsp; m y &nbsp; o r b i t</span>
+            </p>
+            <h1 class="hero-title anim-fade-up" style="animation-delay: 0.5s">
+                <span class="line1">Moayad Hussam</span>
+                <span class="line2 gradient-text">Alshawesh</span>
+            </h1>
+            <div class="hero-role anim-fade-up" style="animation-delay: 0.8s">
+                <span class="role-prefix">I craft</span>
+                <span class="typing" id="typing"></span>
+                <span class="cursor">|</span>
             </div>
-
-            <div class="hero-cta-wrapper" data-float-speed="0.3">
-                <a href="#projects" class="btn-antigravity primary" id="btn-projects">
-                    <span class="btn-glow"></span>
-                    <i class="fas fa-rocket"></i> Explore Projects
-                </a>
-                <a href="#contact" class="btn-antigravity secondary" id="btn-contact">
-                    <span class="btn-glow"></span>
-                    <i class="fas fa-satellite"></i> Get in Touch
-                </a>
-            </div>
-
-            <div class="hero-scroll-indicator" id="scroll-indicator">
-                <div class="scroll-orb">
-                    <div class="scroll-orb-inner"></div>
-                </div>
-                <span class="scroll-text">Scroll to explore</span>
+            <p class="hero-tagline anim-fade-up" style="animation-delay: 1s">Designing experiences that defy gravity</p>
+            <div class="hero-buttons anim-fade-up" style="animation-delay: 1.2s">
+                <a href="#projects" class="btn-glow primary"><i class="fas fa-rocket"></i> Explore Projects</a>
+                <a href="#contact" class="btn-glow secondary"><i class="fas fa-satellite"></i> Get in Touch</a>
             </div>
         </div>
-
-        <!-- Floating abstract orbs around the hero -->
-        <div class="hero-orb orb-1" data-parallax="0.15"></div>
-        <div class="hero-orb orb-2" data-parallax="0.25"></div>
-        <div class="hero-orb orb-3" data-parallax="0.1"></div>
-        <div class="hero-orb orb-4" data-parallax="0.3"></div>
-        <div class="hero-orb orb-5" data-parallax="0.2"></div>
+        <div class="scroll-hint anim-fade-up" style="animation-delay: 1.8s">
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
     </section>
 
-    <!-- ============ ABOUT SECTION ============ -->
-    <section class="about-section section" id="about">
-        <div class="section-header" data-float-speed="0.4">
-            <h2 class="section-title">
-                <span class="title-accent">About</span> Me
-            </h2>
+    <!-- ===== ABOUT ===== -->
+    <section class="about section" id="about">
+        <div class="section-head fade-in">
+            <h2><span class="gradient-text">About</span> Me</h2>
             <div class="section-line"></div>
         </div>
-
-        <div class="about-layout">
-            <div class="about-image-container" data-tilt data-float-speed="0.6">
-                <div class="image-ring ring-1"></div>
-                <div class="image-ring ring-2"></div>
-                <div class="image-ring ring-3"></div>
-                <div class="about-photo-frame">
-                    <img src="moayad.jpg" alt="Moayad Hussam Alshawesh" class="about-photo">
+        <div class="about-grid">
+            <div class="about-photo-wrap float-anim fade-in">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+                <div class="photo-frame">
+                    <img src="moayad.jpg" alt="Moayad Hussam Alshawesh">
                 </div>
             </div>
-
-            <div class="about-info-blocks">
-                <div class="info-block" data-float-speed="0.5" data-tilt>
+            <div class="about-info">
+                <div class="info-card fade-in" style="animation-delay: 0.1s">
                     <div class="info-icon">🎓</div>
                     <p>Computer Science Graduate from <strong>Al al-Bayt University</strong>, equipped with a strong
-                        foundation in algorithms, data structures, and software engineering principles.</p>
+                        foundation in algorithms, data structures, and software engineering.</p>
                 </div>
-                <div class="info-block" data-float-speed="0.7" data-tilt>
+                <div class="info-card fade-in" style="animation-delay: 0.2s">
                     <div class="info-icon">🤖</div>
-                    <p>Bridging <strong>AI & Deep Learning</strong> with full-stack development. My graduation project
-                        integrated Vision Transformer (ViT-B/16) with a PHP e-commerce platform achieving
-                        <strong>85%+ prediction accuracy</strong>.</p>
+                    <p>Bridging <strong>AI & Deep Learning</strong> with full-stack development. Graduation project
+                        integrated Vision Transformer (ViT-B/16) achieving <strong>85%+ prediction accuracy</strong>.
+                    </p>
                 </div>
-                <div class="info-block" data-float-speed="0.4" data-tilt>
+                <div class="info-card fade-in" style="animation-delay: 0.3s">
                     <div class="info-icon">💻</div>
                     <p>Expanding into <strong>ASP.NET Core</strong> while maintaining expertise in PHP, Python, MySQL,
-                        and modern JavaScript — building
-                        scalable, intelligent web applications.</p>
+                        and modern JavaScript.</p>
                 </div>
-
-                <div class="about-stats-orbital">
-                    <div class="stat-orb" data-float-speed="0.3">
-                        <span class="stat-number" data-target="5">0</span>
-                        <span class="stat-suffix">+</span>
+                <div class="stats-row">
+                    <div class="stat-box fade-in float-anim" style="animation-delay: 0.4s">
+                        <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
                         <span class="stat-label">Languages</span>
                     </div>
-                    <div class="stat-orb" data-float-speed="0.5">
-                        <span class="stat-number" data-target="85">0</span>
-                        <span class="stat-suffix">%+</span>
+                    <div class="stat-box fade-in float-anim" style="animation-delay: 0.5s">
+                        <span class="stat-num" data-target="85">0</span><span class="stat-plus">%+</span>
                         <span class="stat-label">AI Accuracy</span>
                     </div>
-                    <div class="stat-orb" data-float-speed="0.6">
-                        <span class="stat-number" data-target="6000">0</span>
-                        <span class="stat-suffix">+</span>
+                    <div class="stat-box fade-in float-anim" style="animation-delay: 0.6s">
+                        <span class="stat-num" data-target="6000">0</span><span class="stat-plus">+</span>
                         <span class="stat-label">Lines of Code</span>
                     </div>
                 </div>
@@ -170,267 +136,206 @@
         </div>
     </section>
 
-    <!-- ============ SKILLS SECTION ============ -->
-    <section class="skills-section section" id="skills">
-        <div class="section-header" data-float-speed="0.4">
-            <h2 class="section-title">
-                <span class="title-accent">My</span> Skills
-            </h2>
+    <!-- ===== SKILLS ===== -->
+    <section class="skills section" id="skills">
+        <div class="section-head fade-in">
+            <h2><span class="gradient-text">My</span> Skills</h2>
             <div class="section-line"></div>
-            <p class="section-subtitle">Technologies orbiting in my universe</p>
+            <p class="section-sub">Technologies orbiting in my universe</p>
         </div>
-
-        <div class="skills-constellation" id="skills-constellation">
-            <div class="skill-planet" data-tilt data-skill="PHP" data-level="90">
-                <div class="planet-ring"></div>
-                <div class="planet-core php-core">PHP</div>
-                <div class="planet-label">
-                    <h4>PHP</h4>
-                    <p>Native OOP/MVC, REST APIs</p>
-                    <div class="planet-bar"><span style="--level: 90%"></span></div>
+        <div class="skills-grid">
+            <div class="skill-card fade-in" style="animation-delay: 0.1s">
+                <div class="skill-orb php">PHP</div>
+                <h4>PHP</h4>
+                <p>Native OOP/MVC, REST APIs</p>
+                <div class="bar">
+                    <div class="bar-fill" data-width="90%"></div>
                 </div>
             </div>
-            <div class="skill-planet" data-tilt data-skill="AI" data-level="85">
-                <div class="planet-ring"></div>
-                <div class="planet-core ai-core">🤖</div>
-                <div class="planet-label">
-                    <h4>AI & ML</h4>
-                    <p>PyTorch, Vision Transformer</p>
-                    <div class="planet-bar"><span style="--level: 85%"></span></div>
+            <div class="skill-card fade-in" style="animation-delay: 0.2s">
+                <div class="skill-orb ai">🤖</div>
+                <h4>AI & ML</h4>
+                <p>PyTorch, Vision Transformer</p>
+                <div class="bar">
+                    <div class="bar-fill" data-width="85%"></div>
                 </div>
             </div>
-            <div class="skill-planet" data-tilt data-skill="JS" data-level="80">
-                <div class="planet-ring"></div>
-                <div class="planet-core js-core">JS</div>
-                <div class="planet-label">
-                    <h4>JavaScript</h4>
-                    <p>ES6+, AJAX, DOM, Fetch API</p>
-                    <div class="planet-bar"><span style="--level: 80%"></span></div>
+            <div class="skill-card fade-in" style="animation-delay: 0.3s">
+                <div class="skill-orb js">JS</div>
+                <h4>JavaScript</h4>
+                <p>ES6+, AJAX, DOM, Fetch API</p>
+                <div class="bar">
+                    <div class="bar-fill" data-width="80%"></div>
                 </div>
             </div>
-            <div class="skill-planet" data-tilt data-skill="MySQL" data-level="85">
-                <div class="planet-ring"></div>
-                <div class="planet-core mysql-core">🗄️</div>
-                <div class="planet-label">
-                    <h4>MySQL</h4>
-                    <p>DB Design, Transactions</p>
-                    <div class="planet-bar"><span style="--level: 85%"></span></div>
+            <div class="skill-card fade-in" style="animation-delay: 0.4s">
+                <div class="skill-orb db">🗄️</div>
+                <h4>MySQL</h4>
+                <p>DB Design, Transactions</p>
+                <div class="bar">
+                    <div class="bar-fill" data-width="85%"></div>
                 </div>
             </div>
-            <div class="skill-planet" data-tilt data-skill="Python" data-level="75">
-                <div class="planet-ring"></div>
-                <div class="planet-core python-core">🐍</div>
-                <div class="planet-label">
-                    <h4>Python</h4>
-                    <p>PyTorch, PIL, Data Processing</p>
-                    <div class="planet-bar"><span style="--level: 75%"></span></div>
+            <div class="skill-card fade-in" style="animation-delay: 0.5s">
+                <div class="skill-orb py">🐍</div>
+                <h4>Python</h4>
+                <p>PyTorch, PIL, Data Processing</p>
+                <div class="bar">
+                    <div class="bar-fill" data-width="75%"></div>
                 </div>
             </div>
-            <div class="skill-planet" data-tilt data-skill="ASP.NET" data-level="40">
-                <div class="planet-ring"></div>
-                <div class="planet-core dotnet-core">⚙️</div>
-                <div class="planet-label">
-                    <h4>ASP.NET Core</h4>
-                    <p>C#, Entity Framework, MVC</p>
-                    <div class="planet-bar"><span style="--level: 40%"></span></div>
+            <div class="skill-card fade-in" style="animation-delay: 0.6s">
+                <div class="skill-orb net">⚙️</div>
+                <h4>ASP.NET Core</h4>
+                <p>C#, Entity Framework, MVC</p>
+                <div class="bar">
+                    <div class="bar-fill" data-width="40%"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ PROJECTS SECTION ============ -->
-    <section class="projects-section section" id="projects">
-        <div class="section-header" data-float-speed="0.4">
-            <h2 class="section-title">
-                <span class="title-accent">Featured</span> Projects
-            </h2>
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects section" id="projects">
+        <div class="section-head fade-in">
+            <h2><span class="gradient-text">Featured</span> Projects</h2>
             <div class="section-line"></div>
-            <p class="section-subtitle">Capsules floating in the creative void</p>
+            <p class="section-sub">Capsules floating in the creative void</p>
         </div>
 
-        <!-- Featured Graduation Project - The "Mothership" -->
-        <div class="mothership-project" data-tilt id="mothership">
-            <div class="mothership-glow"></div>
-            <div class="mothership-content">
-                <div class="mothership-badge">
-                    <i class="fas fa-graduation-cap"></i> Graduation Project
+        <!-- Main Project -->
+        <div class="main-project glass-card fade-in">
+            <div class="main-project-body">
+                <span class="badge"><i class="fas fa-graduation-cap"></i> Graduation Project</span>
+                <h3>Skin Analysis & E-commerce Platform</h3>
+                <p>Engineered a production-grade web application integrating <strong>Vision Transformer
+                        (ViT-B/16)</strong> deep learning model with native PHP e-commerce platform for personalized
+                    skincare recommendations.</p>
+                <div class="tags">
+                    <span>PHP (MVC)</span><span>Python</span><span>PyTorch</span>
+                    <span>Vision Transformer</span><span>MySQL</span><span>AJAX</span><span>Bootstrap 5</span>
                 </div>
-                <h3 class="mothership-title">Skin Analysis & E-commerce Platform</h3>
-                <p class="mothership-desc">
-                    Engineered a production-grade web application integrating
-                    <strong>Vision Transformer (ViT-B/16)</strong> deep learning model with native PHP e-commerce
-                    platform for personalized skincare recommendations based on real-time image classification.
-                </p>
-                <div class="mothership-tech">
-                    <span class="tech-orbit">PHP (MVC)</span>
-                    <span class="tech-orbit">Python</span>
-                    <span class="tech-orbit">PyTorch</span>
-                    <span class="tech-orbit">Vision Transformer</span>
-                    <span class="tech-orbit">MySQL</span>
-                    <span class="tech-orbit">AJAX</span>
-                    <span class="tech-orbit">Bootstrap 5</span>
+                <div class="features-grid">
+                    <div>✦ 85%+ AI prediction accuracy</div>
+                    <div>✦ Multi-currency support (JOD/USD)</div>
+                    <div>✦ Transaction-safe checkout (ACID)</div>
+                    <div>✦ 8-table normalized database</div>
+                    <div>✦ Admin dashboard with analytics</div>
+                    <div>✦ AJAX-based live search & cart</div>
                 </div>
-                <div class="mothership-features">
-                    <div class="feature-beam">✦ 85%+ AI prediction accuracy</div>
-                    <div class="feature-beam">✦ Multi-currency support (JOD/USD)</div>
-                    <div class="feature-beam">✦ Transaction-safe checkout (ACID)</div>
-                    <div class="feature-beam">✦ 8-table normalized database</div>
-                    <div class="feature-beam">✦ Admin dashboard with analytics</div>
-                    <div class="feature-beam">✦ AJAX-based live search & cart</div>
-                </div>
-                <div class="mothership-actions">
+                <div class="project-btns">
                     <a href="https://github.com/Moayad-77/skin-analysis-ecommerce" target="_blank"
-                        class="btn-antigravity primary">
-                        <span class="btn-glow"></span>
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
+                        class="btn-glow primary"><i class="fab fa-github"></i> View on GitHub</a>
                     <a href="https://github.com/Moayad-77/skin-analysis-ecommerce#readme" target="_blank"
-                        class="btn-antigravity secondary">
-                        <span class="btn-glow"></span>
-                        <i class="fas fa-book-open"></i> Documentation
-                    </a>
+                        class="btn-glow secondary"><i class="fas fa-book-open"></i> Documentation</a>
                 </div>
             </div>
-            <div class="mothership-visual">
-                <div class="mothership-hologram">
-                    <div class="hologram-ring h-ring-1"></div>
-                    <div class="hologram-ring h-ring-2"></div>
-                    <div class="hologram-ring h-ring-3"></div>
-                    <div class="hologram-icon">🔬</div>
+            <div class="main-project-visual">
+                <div class="hologram">
+                    <div class="holo-ring hr-1"></div>
+                    <div class="holo-ring hr-2"></div>
+                    <div class="holo-ring hr-3"></div>
+                    <div class="holo-icon">🔬</div>
                 </div>
             </div>
         </div>
 
-        <!-- Floating Capsule Projects -->
-        <div class="capsule-grid">
-            <div class="project-capsule" data-tilt data-float-speed="0.5">
-                <div class="capsule-glow"></div>
-                <div class="capsule-icon">🎨</div>
-                <h4 class="capsule-title">Personal Portfolio</h4>
-                <p class="capsule-desc">Modern responsive portfolio with immersive Antigravity design</p>
-                <div class="capsule-tech">
-                    <span>HTML</span><span>CSS</span><span>JS</span>
-                </div>
+        <!-- Small Projects -->
+        <div class="projects-row">
+            <div class="capsule glass-card fade-in float-anim" style="animation-delay: 0.1s">
+                <div class="capsule-emoji">🎨</div>
+                <h4>Personal Portfolio</h4>
+                <p>Modern responsive portfolio with immersive Antigravity design</p>
+                <div class="capsule-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
             </div>
-            <div class="project-capsule" data-tilt data-float-speed="0.7">
-                <div class="capsule-glow"></div>
-                <div class="capsule-icon">📋</div>
-                <h4 class="capsule-title">Task Manager</h4>
-                <p class="capsule-desc">Full-stack app with user authentication & CRUD operations</p>
-                <div class="capsule-tech">
-                    <span>Java</span><span>Spring</span><span>MySQL</span>
-                </div>
+            <div class="capsule glass-card fade-in float-anim" style="animation-delay: 0.2s">
+                <div class="capsule-emoji">📋</div>
+                <h4>Task Manager</h4>
+                <p>Full-stack app with user authentication & CRUD operations</p>
+                <div class="capsule-tags"><span>Java</span><span>Spring</span><span>MySQL</span></div>
             </div>
-            <div class="project-capsule" data-tilt data-float-speed="0.6">
-                <div class="capsule-glow"></div>
-                <div class="capsule-icon">📊</div>
-                <h4 class="capsule-title">Data Dashboard</h4>
-                <p class="capsule-desc">Interactive charts and real-time data visualization</p>
-                <div class="capsule-tech">
-                    <span>JS</span><span>Chart.js</span><span>PHP</span>
-                </div>
+            <div class="capsule glass-card fade-in float-anim" style="animation-delay: 0.3s">
+                <div class="capsule-emoji">📊</div>
+                <h4>Data Dashboard</h4>
+                <p>Interactive charts and real-time data visualization</p>
+                <div class="capsule-tags"><span>JS</span><span>Chart.js</span><span>PHP</span></div>
             </div>
         </div>
     </section>
 
-    <!-- ============ CONTACT SECTION ============ -->
-    <section class="contact-section section" id="contact">
-        <div class="section-header" data-float-speed="0.4">
-            <h2 class="section-title">
-                <span class="title-accent">Get in</span> Touch
-            </h2>
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact">
+        <div class="section-head fade-in">
+            <h2><span class="gradient-text">Get in</span> Touch</h2>
             <div class="section-line"></div>
-            <p class="section-subtitle">Transmit a signal across the cosmos</p>
+            <p class="section-sub">Transmit a signal across the cosmos</p>
         </div>
-
-        <div class="contact-layout">
-            <div class="contact-info-panel">
-                <div class="contact-beacon" data-tilt data-float-speed="0.5">
-                    <div class="beacon-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="beacon-info">
+        <div class="contact-grid">
+            <div class="contact-left">
+                <div class="contact-card glass-card fade-in">
+                    <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
                         <h4>Email</h4>
                         <p>moyadalshawesh@gmail.com</p>
                     </div>
                 </div>
-                <div class="contact-beacon" data-tilt data-float-speed="0.6">
-                    <div class="beacon-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="beacon-info">
+                <div class="contact-card glass-card fade-in" style="animation-delay: 0.1s">
+                    <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
                         <h4>Location</h4>
                         <p>Amman, Jordan</p>
                     </div>
                 </div>
-                <div class="contact-beacon" data-tilt data-float-speed="0.4">
-                    <div class="beacon-icon"><i class="fas fa-phone"></i></div>
-                    <div class="beacon-info">
+                <div class="contact-card glass-card fade-in" style="animation-delay: 0.2s">
+                    <div class="cc-icon"><i class="fas fa-phone"></i></div>
+                    <div>
                         <h4>Phone</h4>
                         <p>+962 78 7779 133</p>
                     </div>
                 </div>
-
-                <div class="social-orbit">
-                    <a href="https://github.com/Moayad-77" target="_blank" class="social-star" aria-label="GitHub"
-                        data-float-speed="0.3">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/moayad-alshawesh-877495342" target="_blank" class="social-star"
-                        aria-label="LinkedIn" data-float-speed="0.5">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://wa.me/962787779133" target="_blank" class="social-star" aria-label="WhatsApp"
-                        data-float-speed="0.7">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="mailto:moyadalshawesh@gmail.com" class="social-star" aria-label="Email"
-                        data-float-speed="0.4">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                <div class="social-row fade-in" style="animation-delay: 0.3s">
+                    <a href="https://github.com/Moayad-77" target="_blank" class="social-btn" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/moayad-alshawesh-877495342" target="_blank" class="social-btn"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/962787779133" target="_blank" class="social-btn" aria-label="WhatsApp"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:moyadalshawesh@gmail.com" class="social-btn" aria-label="Email"><i
+                            class="fas fa-envelope"></i></a>
                 </div>
             </div>
-
-            <form class="contact-transmitter" id="contact-form" action="https://formspree.io/f/xqelgaar"
+            <form class="contact-form glass-card fade-in" id="contact-form" action="https://formspree.io/f/xqelgaar"
                 method="POST">
-                <div class="form-field-float">
+                <div class="field">
                     <input type="text" id="name" name="name" required placeholder=" ">
                     <label for="name">Your Name</label>
-                    <div class="field-glow"></div>
                 </div>
-                <div class="form-field-float">
+                <div class="field">
                     <input type="email" id="email" name="email" required placeholder=" ">
                     <label for="email">Your Email</label>
-                    <div class="field-glow"></div>
                 </div>
-                <div class="form-field-float">
+                <div class="field">
                     <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                     <label for="message">Your Message</label>
-                    <div class="field-glow"></div>
                 </div>
-                <button type="submit" class="btn-antigravity primary submit-btn" id="submit-btn">
-                    <span class="btn-glow"></span>
+                <button type="submit" class="btn-glow primary" id="submit-btn">
                     <i class="fas fa-paper-plane"></i> Transmit Message
                 </button>
             </form>
         </div>
     </section>
 
-    <!-- ============ FOOTER ============ -->
-    <footer class="footer-cosmos" id="footer">
-        <div class="footer-stars">
-            <a href="https://github.com/Moayad-77" target="_blank" class="footer-icon-star" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/moayad-alshawesh-877495342" target="_blank" class="footer-icon-star"
-                aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://wa.me/962787779133" target="_blank" class="footer-icon-star" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="mailto:moyadalshawesh@gmail.com" class="footer-icon-star" aria-label="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-socials">
+            <a href="https://github.com/Moayad-77" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/moayad-alshawesh-877495342" target="_blank" class="social-btn"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/962787779133" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:moyadalshawesh@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
         </div>
-        <p class="footer-text">&copy; 2026 Moayad Hussam Alshawesh</p>
-        <p class="footer-tagline">Designed in zero gravity ✦</p>
+        <p>&copy; 2026 Moayad Hussam Alshawesh</p>
+        <p class="footer-sub">Designed in zero gravity ✦</p>
     </footer>
 
     <script src="script.js"></script>
