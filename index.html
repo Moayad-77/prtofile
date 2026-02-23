@@ -5,21 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Portfolio of a Computer Science student specializing in Java, JavaScript, PHP, and AI development.">
-    <title>Moayad Hussam Alshawesh | CS Portfolio</title>
+        content="Moayad Hussam Alshawesh — Full-Stack Developer & AI Specialist. An antigravity portfolio experience that defies convention.">
+    <title>Moayad Alshawesh | Antigravity Portfolio</title>
+
+    <!-- Google Fonts: Outfit (light weights) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- ============ COSMIC BACKGROUND LAYERS ============ -->
+    <div class="cosmos-bg" id="cosmos-bg">
+        <div class="nebula-layer nebula-1"></div>
+        <div class="nebula-layer nebula-2"></div>
+        <div class="nebula-layer nebula-3"></div>
+        <canvas id="star-field"></canvas>
+    </div>
+
+    <!-- Floating cosmic dust particles -->
+    <div class="cosmic-dust" id="cosmic-dust"></div>
+
+    <!-- ============ NAVIGATION ============ -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo"><span class="logo-bracket">&lt;</span>Dev<span
-                    class="logo-bracket">/&gt;</span></a>
+            <a href="#hero" class="nav-logo">
+                <span class="logo-glow">&lt;</span>AG<span class="logo-glow">/&gt;</span>
+            </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -27,277 +45,394 @@
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <circle cx="12" cy="12" r="5" />
-                        <path
-                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-                    </svg>
-                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                    </svg>
+                <a href="Moayad_CV.pdf" download class="nav-cv-btn">
+                    <i class="fas fa-download"></i> CV
+                </a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
                 </button>
-                <button class="mobile-menu-btn" id="mobile-menu-btn"
-                    aria-label="Toggle menu"><span></span><span></span><span></span></button>
             </div>
         </div>
     </nav>
 
+    <!-- ============ HERO SECTION ============ -->
     <section class="hero" id="hero">
-        <div class="hero-bg"></div>
+        <canvas id="hero-particles"></canvas>
         <div class="hero-content">
-            <div class="hero-text">
-                <p class="hero-greeting">👋 Hello, I'm</p>
-                <h1 class="hero-title">Moayad Hussam Alshawesh<br><span class="gradient-text typing-text">Full-Stack
-                        Developer</span></h1>
-                <p class="hero-subtitle">🎓 Computer Science Graduate from Al al-Bayt University<br>
-                    🤖 Bridging AI with Web Development<br>
-                    💻 PHP • Python • PyTorch • MySQL</p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
-                    <a href="Moayad_CV.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download
-                        CV</a>
-                    <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Me</a>
+            <div class="hero-text-wrapper" data-float-speed="0.5">
+                <p class="hero-greeting" id="hero-greeting">
+                    <span class="greeting-particle">W</span><span class="greeting-particle">e</span><span
+                        class="greeting-particle">l</span><span class="greeting-particle">c</span><span
+                        class="greeting-particle">o</span><span class="greeting-particle">m</span><span
+                        class="greeting-particle">e</span><span class="greeting-particle">&nbsp;</span><span
+                        class="greeting-particle">t</span><span class="greeting-particle">o</span><span
+                        class="greeting-particle">&nbsp;</span><span class="greeting-particle">m</span><span
+                        class="greeting-particle">y</span><span class="greeting-particle">&nbsp;</span><span
+                        class="greeting-particle">o</span><span class="greeting-particle">r</span><span
+                        class="greeting-particle">b</span><span class="greeting-particle">i</span><span
+                        class="greeting-particle">t</span>
+                </p>
+                <h1 class="hero-title" id="hero-title">
+                    <span class="title-line">Moayad Hussam</span>
+                    <span class="title-line title-highlight">Alshawesh</span>
+                </h1>
+                <div class="hero-role-container">
+                    <span class="role-prefix">I craft</span>
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="typing-cursor">|</span>
                 </div>
-                <div class="hero-social">
-                    <a href="https://github.com/Moayad-77" target="_blank" class="hero-social-link" title="GitHub"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/moayad-alshawesh-877495342" target="_blank"
-                        class="hero-social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://wa.me/962787779133" target="_blank" class="hero-social-link" title="WhatsApp"><i
-                            class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:moyadalshawesh@gmail.com" class="hero-social-link" title="Email"><i
-                            class="fas fa-envelope"></i></a>
-                </div>
+                <p class="hero-tagline">Designing experiences that defy gravity</p>
             </div>
-            <div class="hero-visual">
-                <div class="code-window">
-                    <div class="code-header"><span class="dot red"></span><span class="dot yellow"></span><span
-                            class="dot green"></span></div>
-                    <pre class="code-content"><code><span class="code-keyword">const</span> developer = {
-  <span class="code-property">skills</span>: [<span class="code-string">"Java"</span>, <span class="code-string">"JS"</span>, <span class="code-string">"PHP"</span>, <span class="code-string">"AI"</span>],
-  <span class="code-property">passion</span>: <span class="code-string">"Building the future"</span>
-};</code></pre>
+
+            <div class="hero-cta-wrapper" data-float-speed="0.3">
+                <a href="#projects" class="btn-antigravity primary" id="btn-projects">
+                    <span class="btn-glow"></span>
+                    <i class="fas fa-rocket"></i> Explore Projects
+                </a>
+                <a href="#contact" class="btn-antigravity secondary" id="btn-contact">
+                    <span class="btn-glow"></span>
+                    <i class="fas fa-satellite"></i> Get in Touch
+                </a>
+            </div>
+
+            <div class="hero-scroll-indicator" id="scroll-indicator">
+                <div class="scroll-orb">
+                    <div class="scroll-orb-inner"></div>
                 </div>
+                <span class="scroll-text">Scroll to explore</span>
             </div>
         </div>
+
+        <!-- Floating abstract orbs around the hero -->
+        <div class="hero-orb orb-1" data-parallax="0.15"></div>
+        <div class="hero-orb orb-2" data-parallax="0.25"></div>
+        <div class="hero-orb orb-3" data-parallax="0.1"></div>
+        <div class="hero-orb orb-4" data-parallax="0.3"></div>
+        <div class="hero-orb orb-5" data-parallax="0.2"></div>
     </section>
 
-    <section class="about section" id="about">
-        <div class="container">
-            <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="image-frame">
-                        <img src="moayad.jpg" alt="Moayad Hussam Alshawesh" class="profile-img">
-                    </div>
-                    <div class="floating-badge badge-1">🎓 CS Graduate</div>
-                    <div class="floating-badge badge-2">🤖 AI Specialist</div>
-                    <div class="floating-badge badge-3">💼 Open to Work</div>
-                </div>
-                <div class="about-text">
-                    <p class="about-intro">I'm a passionate Computer Science graduate from Al al-Bayt University
-                        specializing in Full-Stack Web Development and Artificial Intelligence.</p>
-                    <p>My graduation project integrated <strong>Vision Transformer (ViT-B/16) deep learning</strong>
-                        with a native PHP e-commerce platform, demonstrating my ability to bridge cutting-edge AI with
-                        practical web applications. This project showcases expertise in cross-language integration,
-                        database design, and system architecture.</p>
-                    <p>I'm currently expanding my skill set to include <strong>ASP.NET Core</strong> while maintaining
-                        expertise in PHP, Python, MySQL, and modern JavaScript frameworks. My focus is on building
-                        scalable, secure, and intelligent web applications that solve real-world problems.</p>
-                    <div class="about-stats">
-                        <div class="stat"><span class="stat-number">5+</span><span class="stat-label">Languages</span>
-                        </div>
-                        <div class="stat"><span class="stat-number">85%+</span><span class="stat-label">AI
-                                Accuracy</span></div>
-                        <div class="stat"><span class="stat-number">6000+</span><span class="stat-label">Lines of
-                                Code</span></div>
-                    </div>
+    <!-- ============ ABOUT SECTION ============ -->
+    <section class="about-section section" id="about">
+        <div class="section-header" data-float-speed="0.4">
+            <h2 class="section-title">
+                <span class="title-accent">About</span> Me
+            </h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="about-layout">
+            <div class="about-image-container" data-tilt data-float-speed="0.6">
+                <div class="image-ring ring-1"></div>
+                <div class="image-ring ring-2"></div>
+                <div class="image-ring ring-3"></div>
+                <div class="about-photo-frame">
+                    <img src="moayad.jpg" alt="Moayad Hussam Alshawesh" class="about-photo">
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="skills section" id="skills">
-        <div class="container">
-            <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
-            <p class="section-subtitle">Technologies and tools I work with</p>
-            <div class="skills-grid">
-                <div class="skill-card featured">
-                    <div class="skill-icon php">PHP</div>
-                    <h3 class="skill-name">PHP</h3>
-                    <p class="skill-desc">Native OOP/MVC, MySQL integration, REST APIs</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="--level: 90%"></div>
-                    </div>
-                    <span class="featured-tag">Expert</span>
+            <div class="about-info-blocks">
+                <div class="info-block" data-float-speed="0.5" data-tilt>
+                    <div class="info-icon">🎓</div>
+                    <p>Computer Science Graduate from <strong>Al al-Bayt University</strong>, equipped with a strong
+                        foundation in algorithms, data structures, and software engineering principles.</p>
                 </div>
-                <div class="skill-card featured">
-                    <div class="skill-icon ai">🤖</div>
-                    <h3 class="skill-name">AI & ML</h3>
-                    <p class="skill-desc">PyTorch, Vision Transformer, Computer Vision</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="--level: 85%"></div>
-                    </div>
-                    <span class="featured-tag">Featured</span>
+                <div class="info-block" data-float-speed="0.7" data-tilt>
+                    <div class="info-icon">🤖</div>
+                    <p>Bridging <strong>AI & Deep Learning</strong> with full-stack development. My graduation project
+                        integrated Vision Transformer (ViT-B/16) with a PHP e-commerce platform achieving
+                        <strong>85%+ prediction accuracy</strong>.</p>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon javascript">JS</div>
-                    <h3 class="skill-name">JavaScript</h3>
-                    <p class="skill-desc">AJAX, ES6+, DOM Manipulation, Fetch API</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="--level: 80%"></div>
-                    </div>
+                <div class="info-block" data-float-speed="0.4" data-tilt>
+                    <div class="info-icon">💻</div>
+                    <p>Expanding into <strong>ASP.NET Core</strong> while maintaining expertise in PHP, Python, MySQL,
+                        and modern JavaScript — building
+                        scalable, intelligent web applications.</p>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon java">🗄️</div>
-                    <h3 class="skill-name">MySQL</h3>
-                    <p class="skill-desc">Database Design, Transactions, Optimization</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="--level: 85%"></div>
+
+                <div class="about-stats-orbital">
+                    <div class="stat-orb" data-float-speed="0.3">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Languages</span>
                     </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon java">🐍</div>
-                    <h3 class="skill-name">Python</h3>
-                    <p class="skill-desc">PyTorch, PIL, Data Processing, Scripts</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="--level: 75%"></div>
+                    <div class="stat-orb" data-float-speed="0.5">
+                        <span class="stat-number" data-target="85">0</span>
+                        <span class="stat-suffix">%+</span>
+                        <span class="stat-label">AI Accuracy</span>
                     </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon javascript">⚙️</div>
-                    <h3 class="skill-name">ASP.NET Core</h3>
-                    <p class="skill-desc">Learning: C#, Entity Framework, MVC</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="--level: 40%"></div>
+                    <div class="stat-orb" data-float-speed="0.6">
+                        <span class="stat-number" data-target="6000">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Lines of Code</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="projects section" id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-            <div class="featured-project">
-                <div class="featured-project-image">
-                    <div class="project-placeholder">🔬<span>Skin Analysis Platform</span></div>
-                    <div class="project-overlay"><span class="graduation-badge">🎓 Graduation Project</span></div>
-                </div>
-                <div class="featured-project-content">
-                    <span class="project-category">🎓 Graduation Project | Full-Stack + AI Integration</span>
-                    <h3 class="project-title">Skin Analysis & E-commerce Platform</h3>
-                    <p class="project-description">Engineered a production-grade web application integrating
-                        <strong>Vision Transformer (ViT-B/16) deep learning model</strong> with native PHP e-commerce
-                        platform for personalized skincare recommendations based on real-time image classification.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">PHP (MVC)</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">Vision Transformer</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">AJAX</span>
-                        <span class="tech-tag">Bootstrap 5</span>
-                    </div>
-                    <div class="project-features">
-                        <div class="feature">✓ 85%+ AI prediction accuracy (Acne, Wrinkles, Redness)</div>
-                        <div class="feature">✓ Multi-currency support (JOD/USD) with live exchange rates</div>
-                        <div class="feature">✓ Transaction-safe checkout with ACID compliance</div>
-                        <div class="feature">✓ AJAX-based live search & cart management</div>
-                        <div class="feature">✓ 8-table normalized database with foreign keys</div>
-                        <div class="feature">✓ Admin dashboard (CRUD, analytics, order tracking)</div>
-                    </div>
-                    <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                        <a href="https://github.com/Moayad-77/skin-analysis-ecommerce" target="_blank"
-                            class="btn btn-primary" style="text-decoration: none;">GitHub Repository</a>
-                        <a href="https://github.com/Moayad-77/skin-analysis-ecommerce#readme" target="_blank"
-                            class="btn btn-secondary" style="text-decoration: none;">View Details</a>
-                    </div>
+    <!-- ============ SKILLS SECTION ============ -->
+    <section class="skills-section section" id="skills">
+        <div class="section-header" data-float-speed="0.4">
+            <h2 class="section-title">
+                <span class="title-accent">My</span> Skills
+            </h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Technologies orbiting in my universe</p>
+        </div>
+
+        <div class="skills-constellation" id="skills-constellation">
+            <div class="skill-planet" data-tilt data-skill="PHP" data-level="90">
+                <div class="planet-ring"></div>
+                <div class="planet-core php-core">PHP</div>
+                <div class="planet-label">
+                    <h4>PHP</h4>
+                    <p>Native OOP/MVC, REST APIs</p>
+                    <div class="planet-bar"><span style="--level: 90%"></span></div>
                 </div>
             </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-card-header">🎨</div>
-                    <h4 class="project-card-title">Personal Portfolio</h4>
-                    <p class="project-card-desc">Modern responsive portfolio with dark mode</p>
-                    <div class="project-card-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            <div class="skill-planet" data-tilt data-skill="AI" data-level="85">
+                <div class="planet-ring"></div>
+                <div class="planet-core ai-core">🤖</div>
+                <div class="planet-label">
+                    <h4>AI & ML</h4>
+                    <p>PyTorch, Vision Transformer</p>
+                    <div class="planet-bar"><span style="--level: 85%"></span></div>
                 </div>
-                <div class="project-card">
-                    <div class="project-card-header">📋</div>
-                    <h4 class="project-card-title">Task Manager</h4>
-                    <p class="project-card-desc">Full-stack app with user authentication</p>
-                    <div class="project-card-tech"><span>Java</span><span>Spring</span><span>MySQL</span></div>
+            </div>
+            <div class="skill-planet" data-tilt data-skill="JS" data-level="80">
+                <div class="planet-ring"></div>
+                <div class="planet-core js-core">JS</div>
+                <div class="planet-label">
+                    <h4>JavaScript</h4>
+                    <p>ES6+, AJAX, DOM, Fetch API</p>
+                    <div class="planet-bar"><span style="--level: 80%"></span></div>
                 </div>
-                <div class="project-card">
-                    <div class="project-card-header">📊</div>
-                    <h4 class="project-card-title">Data Dashboard</h4>
-                    <p class="project-card-desc">Interactive charts for data analysis</p>
-                    <div class="project-card-tech"><span>JS</span><span>Chart.js</span><span>PHP</span></div>
+            </div>
+            <div class="skill-planet" data-tilt data-skill="MySQL" data-level="85">
+                <div class="planet-ring"></div>
+                <div class="planet-core mysql-core">🗄️</div>
+                <div class="planet-label">
+                    <h4>MySQL</h4>
+                    <p>DB Design, Transactions</p>
+                    <div class="planet-bar"><span style="--level: 85%"></span></div>
+                </div>
+            </div>
+            <div class="skill-planet" data-tilt data-skill="Python" data-level="75">
+                <div class="planet-ring"></div>
+                <div class="planet-core python-core">🐍</div>
+                <div class="planet-label">
+                    <h4>Python</h4>
+                    <p>PyTorch, PIL, Data Processing</p>
+                    <div class="planet-bar"><span style="--level: 75%"></span></div>
+                </div>
+            </div>
+            <div class="skill-planet" data-tilt data-skill="ASP.NET" data-level="40">
+                <div class="planet-ring"></div>
+                <div class="planet-core dotnet-core">⚙️</div>
+                <div class="planet-label">
+                    <h4>ASP.NET Core</h4>
+                    <p>C#, Entity Framework, MVC</p>
+                    <div class="planet-bar"><span style="--level: 40%"></span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact section" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
-            <p class="section-subtitle">Feel free to reach out for collaborations</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>moyadalshawesh@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Amman, Jordan</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+962 78 7779 133</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Moayad-77" target="_blank" class="social-link github"
-                            aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/moayad-alshawesh-877495342" target="_blank"
-                            class="social-link linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/962787779133" target="_blank" class="social-link whatsapp"
-                            aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:moyadalshawesh@gmail.com" class="social-link email" aria-label="Email"><i
-                                class="fas fa-envelope"></i></a>
-                    </div>
+    <!-- ============ PROJECTS SECTION ============ -->
+    <section class="projects-section section" id="projects">
+        <div class="section-header" data-float-speed="0.4">
+            <h2 class="section-title">
+                <span class="title-accent">Featured</span> Projects
+            </h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Capsules floating in the creative void</p>
+        </div>
+
+        <!-- Featured Graduation Project - The "Mothership" -->
+        <div class="mothership-project" data-tilt id="mothership">
+            <div class="mothership-glow"></div>
+            <div class="mothership-content">
+                <div class="mothership-badge">
+                    <i class="fas fa-graduation-cap"></i> Graduation Project
                 </div>
-                <form class="contact-form" id="contact-form" action="https://formspree.io/f/xqelgaar" method="POST">
-                    <div class="form-group"><input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group"><input type="email" id="email" name="email" placeholder="Your Email"
-                            required></div>
-                    <div class="form-group"><textarea id="message" name="message" placeholder="Your Message" rows="5"
-                            required></textarea></div>
-                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                </form>
+                <h3 class="mothership-title">Skin Analysis & E-commerce Platform</h3>
+                <p class="mothership-desc">
+                    Engineered a production-grade web application integrating
+                    <strong>Vision Transformer (ViT-B/16)</strong> deep learning model with native PHP e-commerce
+                    platform for personalized skincare recommendations based on real-time image classification.
+                </p>
+                <div class="mothership-tech">
+                    <span class="tech-orbit">PHP (MVC)</span>
+                    <span class="tech-orbit">Python</span>
+                    <span class="tech-orbit">PyTorch</span>
+                    <span class="tech-orbit">Vision Transformer</span>
+                    <span class="tech-orbit">MySQL</span>
+                    <span class="tech-orbit">AJAX</span>
+                    <span class="tech-orbit">Bootstrap 5</span>
+                </div>
+                <div class="mothership-features">
+                    <div class="feature-beam">✦ 85%+ AI prediction accuracy</div>
+                    <div class="feature-beam">✦ Multi-currency support (JOD/USD)</div>
+                    <div class="feature-beam">✦ Transaction-safe checkout (ACID)</div>
+                    <div class="feature-beam">✦ 8-table normalized database</div>
+                    <div class="feature-beam">✦ Admin dashboard with analytics</div>
+                    <div class="feature-beam">✦ AJAX-based live search & cart</div>
+                </div>
+                <div class="mothership-actions">
+                    <a href="https://github.com/Moayad-77/skin-analysis-ecommerce" target="_blank"
+                        class="btn-antigravity primary">
+                        <span class="btn-glow"></span>
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="https://github.com/Moayad-77/skin-analysis-ecommerce#readme" target="_blank"
+                        class="btn-antigravity secondary">
+                        <span class="btn-glow"></span>
+                        <i class="fas fa-book-open"></i> Documentation
+                    </a>
+                </div>
+            </div>
+            <div class="mothership-visual">
+                <div class="mothership-hologram">
+                    <div class="hologram-ring h-ring-1"></div>
+                    <div class="hologram-ring h-ring-2"></div>
+                    <div class="hologram-ring h-ring-3"></div>
+                    <div class="hologram-icon">🔬</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Capsule Projects -->
+        <div class="capsule-grid">
+            <div class="project-capsule" data-tilt data-float-speed="0.5">
+                <div class="capsule-glow"></div>
+                <div class="capsule-icon">🎨</div>
+                <h4 class="capsule-title">Personal Portfolio</h4>
+                <p class="capsule-desc">Modern responsive portfolio with immersive Antigravity design</p>
+                <div class="capsule-tech">
+                    <span>HTML</span><span>CSS</span><span>JS</span>
+                </div>
+            </div>
+            <div class="project-capsule" data-tilt data-float-speed="0.7">
+                <div class="capsule-glow"></div>
+                <div class="capsule-icon">📋</div>
+                <h4 class="capsule-title">Task Manager</h4>
+                <p class="capsule-desc">Full-stack app with user authentication & CRUD operations</p>
+                <div class="capsule-tech">
+                    <span>Java</span><span>Spring</span><span>MySQL</span>
+                </div>
+            </div>
+            <div class="project-capsule" data-tilt data-float-speed="0.6">
+                <div class="capsule-glow"></div>
+                <div class="capsule-icon">📊</div>
+                <h4 class="capsule-title">Data Dashboard</h4>
+                <p class="capsule-desc">Interactive charts and real-time data visualization</p>
+                <div class="capsule-tech">
+                    <span>JS</span><span>Chart.js</span><span>PHP</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Moayad Hussam Alshawesh. Built with ❤️</p>
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="contact-section section" id="contact">
+        <div class="section-header" data-float-speed="0.4">
+            <h2 class="section-title">
+                <span class="title-accent">Get in</span> Touch
+            </h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Transmit a signal across the cosmos</p>
         </div>
+
+        <div class="contact-layout">
+            <div class="contact-info-panel">
+                <div class="contact-beacon" data-tilt data-float-speed="0.5">
+                    <div class="beacon-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="beacon-info">
+                        <h4>Email</h4>
+                        <p>moyadalshawesh@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-beacon" data-tilt data-float-speed="0.6">
+                    <div class="beacon-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="beacon-info">
+                        <h4>Location</h4>
+                        <p>Amman, Jordan</p>
+                    </div>
+                </div>
+                <div class="contact-beacon" data-tilt data-float-speed="0.4">
+                    <div class="beacon-icon"><i class="fas fa-phone"></i></div>
+                    <div class="beacon-info">
+                        <h4>Phone</h4>
+                        <p>+962 78 7779 133</p>
+                    </div>
+                </div>
+
+                <div class="social-orbit">
+                    <a href="https://github.com/Moayad-77" target="_blank" class="social-star" aria-label="GitHub"
+                        data-float-speed="0.3">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/moayad-alshawesh-877495342" target="_blank" class="social-star"
+                        aria-label="LinkedIn" data-float-speed="0.5">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/962787779133" target="_blank" class="social-star" aria-label="WhatsApp"
+                        data-float-speed="0.7">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:moyadalshawesh@gmail.com" class="social-star" aria-label="Email"
+                        data-float-speed="0.4">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-transmitter" id="contact-form" action="https://formspree.io/f/xqelgaar"
+                method="POST">
+                <div class="form-field-float">
+                    <input type="text" id="name" name="name" required placeholder=" ">
+                    <label for="name">Your Name</label>
+                    <div class="field-glow"></div>
+                </div>
+                <div class="form-field-float">
+                    <input type="email" id="email" name="email" required placeholder=" ">
+                    <label for="email">Your Email</label>
+                    <div class="field-glow"></div>
+                </div>
+                <div class="form-field-float">
+                    <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                    <label for="message">Your Message</label>
+                    <div class="field-glow"></div>
+                </div>
+                <button type="submit" class="btn-antigravity primary submit-btn" id="submit-btn">
+                    <span class="btn-glow"></span>
+                    <i class="fas fa-paper-plane"></i> Transmit Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer-cosmos" id="footer">
+        <div class="footer-stars">
+            <a href="https://github.com/Moayad-77" target="_blank" class="footer-icon-star" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/moayad-alshawesh-877495342" target="_blank" class="footer-icon-star"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/962787779133" target="_blank" class="footer-icon-star" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:moyadalshawesh@gmail.com" class="footer-icon-star" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <p class="footer-text">&copy; 2026 Moayad Hussam Alshawesh</p>
+        <p class="footer-tagline">Designed in zero gravity ✦</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 
