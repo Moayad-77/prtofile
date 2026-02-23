@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Moayad Hussam Alshawesh — Full-Stack Developer & AI Specialist. An antigravity portfolio experience.">
-    <title>Moayad Alshawesh | Antigravity Portfolio</title>
+        content="Moayad Hussam Alshawesh — Backend Developer & .NET Specialist. An antigravity portfolio experience.">
+    <title>Moayad Alshawesh | Backend Architect</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,24 +25,24 @@
         <canvas id="starfield"></canvas>
     </div>
 
-    <!-- ===== FLOATING PARTICLES ===== -->
+    <!-- ===== DATA STREAM PARTICLES ===== -->
     <canvas id="particles-canvas"></canvas>
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#hero" class="nav-logo">
-                <span class="cyan">&lt;</span>AG<span class="cyan">/&gt;</span>
+                <span class="cyan">&lt;</span>MOAYAD<span class="violet">/&gt;</span>
             </a>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#about" class="nav-link">Architecture</a></li>
+                <li><a href="#skills" class="nav-link">Stack</a></li>
+                <li><a href="#projects" class="nav-link">Systems</a></li>
+                <li><a href="#contact" class="nav-link">Ping</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="Moayad_CV.pdf" download class="nav-cv-btn">
-                    <i class="fas fa-download"></i> CV
+                <a href="Moayad_CV.pdf" download class="nav-cv-btn float-subtle">
+                    <i class="fas fa-terminal"></i> Get_CV()
                 </a>
                 <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
@@ -51,275 +51,267 @@
         </div>
     </nav>
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== HERO SECTION (API & Backend Focus) ===== -->
     <section class="hero" id="hero">
         <div class="hero-orbs">
+            <!-- Representing data nodes -->
             <div class="orb orb-1"></div>
             <div class="orb orb-2"></div>
             <div class="orb orb-3"></div>
-            <div class="orb orb-4"></div>
         </div>
+
         <div class="hero-content">
-            <p class="hero-greeting anim-fade-up" style="animation-delay: 0.2s">
-                <span class="wave-text">W e l c o m e &nbsp; t o &nbsp; m y &nbsp; o r b i t</span>
-            </p>
+            <div class="status-badge anim-fade-up float-subtle" style="animation-delay: 0.2s">
+                <span class="status-dot"></span> System Online: 200 OK
+            </div>
+
             <h1 class="hero-title anim-fade-up" style="animation-delay: 0.5s">
-                <span class="line1">Moayad Hussam</span>
+                <span class="line1">Moayad</span>
                 <span class="line2 gradient-text">Alshawesh</span>
             </h1>
+
             <div class="hero-role anim-fade-up" style="animation-delay: 0.8s">
-                <span class="role-prefix">I craft</span>
+                <span class="role-prefix">const role = "</span>
                 <span class="typing" id="typing"></span>
-                <span class="cursor">|</span>
+                <span class="cursor">"</span>
             </div>
-            <p class="hero-tagline anim-fade-up" style="animation-delay: 1s">Designing experiences that defy gravity</p>
-            <div class="hero-buttons anim-fade-up" style="animation-delay: 1.2s">
-                <a href="#projects" class="btn-glow primary"><i class="fas fa-rocket"></i> Explore Projects</a>
-                <a href="#contact" class="btn-glow secondary"><i class="fas fa-satellite"></i> Get in Touch</a>
+
+            <p class="hero-tagline anim-fade-up" style="animation-delay: 1s">
+                Architecting scalable backend systems, robust APIs, and gravity-defying server logic.
+            </p>
+
+            <div class="hero-buttons anim-fade-up float-subtle" style="animation-delay: 1.2s">
+                <a href="#projects" class="btn-glow primary"><i class="fas fa-server"></i> Initialize Systems</a>
+                <a href="#contact" class="btn-glow secondary"><i class="fas fa-network-wired"></i> Open Connection</a>
             </div>
         </div>
+
         <div class="scroll-hint anim-fade-up" style="animation-delay: 1.8s">
-            <div class="scroll-mouse">
-                <div class="scroll-dot"></div>
-            </div>
-            <span>Scroll to explore</span>
+            <div class="scroll-line"></div>
+            <span>Scroll to parse</span>
         </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
+    <!-- ===== ARCHITECTURE (ABOUT) ===== -->
     <section class="about section" id="about">
         <div class="section-head fade-in">
-            <h2><span class="gradient-text">About</span> Me</h2>
+            <h2><span class="gradient-text">System</span> Core</h2>
             <div class="section-line"></div>
         </div>
-        <div class="about-grid">
-            <div class="about-photo-wrap float-anim fade-in">
-                <div class="ring ring-1"></div>
-                <div class="ring ring-2"></div>
-                <div class="ring ring-3"></div>
-                <div class="photo-frame">
-                    <img src="moayad.jpg" alt="Moayad Hussam Alshawesh">
+
+        <div class="about-fluid">
+            <!-- Fluid geometry replaces rigid grids -->
+            <div class="about-visual float-anim fade-in">
+                <div class="core-node">
+                    <img src="moayad.jpg" alt="Moayad">
+                    <div class="orbit-ring or-1"></div>
+                    <div class="orbit-ring or-2"></div>
                 </div>
             </div>
-            <div class="about-info">
-                <div class="info-card fade-in" style="animation-delay: 0.1s">
-                    <div class="info-icon">🎓</div>
-                    <p>Computer Science Graduate from <strong>Al al-Bayt University</strong>, equipped with a strong
-                        foundation in algorithms, data structures, and software engineering.</p>
-                </div>
-                <div class="info-card fade-in" style="animation-delay: 0.2s">
-                    <div class="info-icon">🤖</div>
-                    <p>Bridging <strong>AI & Deep Learning</strong> with full-stack development. Graduation project
-                        integrated Vision Transformer (ViT-B/16) achieving <strong>85%+ prediction accuracy</strong>.
-                    </p>
-                </div>
-                <div class="info-card fade-in" style="animation-delay: 0.3s">
-                    <div class="info-icon">💻</div>
-                    <p>Expanding into <strong>ASP.NET Core</strong> while maintaining expertise in PHP, Python, MySQL,
-                        and modern JavaScript.</p>
-                </div>
-                <div class="stats-row">
-                    <div class="stat-box fade-in float-anim" style="animation-delay: 0.4s">
-                        <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Languages</span>
+
+            <div class="about-data">
+                <div class="glass-capsule fade-in" style="animation-delay: 0.1s">
+                    <div class="cap-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="cap-text">
+                        <h3>Backend Architecture</h3>
+                        <p>Specializing in <strong>ASP.NET Core</strong> & C#. I build structural foundations that don't
+                            crack under pressure. RESTful APIs, Entity Framework, and clean MVC patterns.</p>
                     </div>
-                    <div class="stat-box fade-in float-anim" style="animation-delay: 0.5s">
-                        <span class="stat-num" data-target="85">0</span><span class="stat-plus">%+</span>
-                        <span class="stat-label">AI Accuracy</span>
+                </div>
+
+                <div class="glass-capsule fade-in" style="animation-delay: 0.2s">
+                    <div class="cap-icon"><i class="fas fa-brain"></i></div>
+                    <div class="cap-text">
+                        <h3>AI Integration</h3>
+                        <p>Bridging complex Deep Learning (like <strong>Vision Transformer ViT-B/16</strong>) with
+                            stable backend infrastructure to serve sub-second smart predictions.</p>
                     </div>
-                    <div class="stat-box fade-in float-anim" style="animation-delay: 0.6s">
-                        <span class="stat-num" data-target="6000">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Lines of Code</span>
+                </div>
+
+                <div class="glass-capsule fade-in" style="animation-delay: 0.3s">
+                    <div class="cap-icon"><i class="fas fa-database"></i></div>
+                    <div class="cap-text">
+                        <h3>Data Systems</h3>
+                        <p>Deep understanding of relational databases (<strong>SQL Server, MySQL</strong>), writing
+                            optimized transactions, and ensuring atomic, consistent data flows.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SKILLS ===== -->
+    <!-- ===== TECH STACK (SKILLS) ===== -->
     <section class="skills section" id="skills">
         <div class="section-head fade-in">
-            <h2><span class="gradient-text">My</span> Skills</h2>
+            <h2><span class="gradient-text">Tech</span> Stack</h2>
             <div class="section-line"></div>
-            <p class="section-sub">Technologies orbiting in my universe</p>
+            <p class="section-sub">Tools floating in my development environment</p>
         </div>
-        <div class="skills-grid">
-            <div class="skill-card fade-in" style="animation-delay: 0.1s">
-                <div class="skill-orb php">PHP</div>
-                <h4>PHP</h4>
-                <p>Native OOP/MVC, REST APIs</p>
-                <div class="bar">
-                    <div class="bar-fill" data-width="90%"></div>
-                </div>
+
+        <!-- Fluid, un-grid-like skill layout -->
+        <div class="skill-cloud">
+            <!-- Primary Nodes (Larger) -->
+            <div class="skill-node primary-node float-anim fade-in tilt-card" style="animation-delay: 0.1s">
+                <div class="node-icon csharp"><i class="fas fa-code"></i></div>
+                <h4>C# & .NET Core</h4>
+                <span>APIs, EF, LINQ</span>
             </div>
-            <div class="skill-card fade-in" style="animation-delay: 0.2s">
-                <div class="skill-orb ai">🤖</div>
-                <h4>AI & ML</h4>
-                <p>PyTorch, Vision Transformer</p>
-                <div class="bar">
-                    <div class="bar-fill" data-width="85%"></div>
-                </div>
+
+            <div class="skill-node primary-node float-anim fade-in tilt-card" style="animation-delay: 0.3s">
+                <div class="node-icon sql"><i class="fas fa-database"></i></div>
+                <h4>SQL Server</h4>
+                <span>Design, T-SQL</span>
             </div>
-            <div class="skill-card fade-in" style="animation-delay: 0.3s">
-                <div class="skill-orb js">JS</div>
-                <h4>JavaScript</h4>
-                <p>ES6+, AJAX, DOM, Fetch API</p>
-                <div class="bar">
-                    <div class="bar-fill" data-width="80%"></div>
-                </div>
-            </div>
-            <div class="skill-card fade-in" style="animation-delay: 0.4s">
-                <div class="skill-orb db">🗄️</div>
-                <h4>MySQL</h4>
-                <p>DB Design, Transactions</p>
-                <div class="bar">
-                    <div class="bar-fill" data-width="85%"></div>
-                </div>
-            </div>
-            <div class="skill-card fade-in" style="animation-delay: 0.5s">
-                <div class="skill-orb py">🐍</div>
+
+            <div class="skill-node primary-node float-anim fade-in tilt-card" style="animation-delay: 0.5s">
+                <div class="node-icon python"><i class="fab fa-python"></i></div>
                 <h4>Python</h4>
-                <p>PyTorch, PIL, Data Processing</p>
-                <div class="bar">
-                    <div class="bar-fill" data-width="75%"></div>
-                </div>
+                <span>PyTorch, AI</span>
             </div>
-            <div class="skill-card fade-in" style="animation-delay: 0.6s">
-                <div class="skill-orb net">⚙️</div>
-                <h4>ASP.NET Core</h4>
-                <p>C#, Entity Framework, MVC</p>
-                <div class="bar">
-                    <div class="bar-fill" data-width="40%"></div>
-                </div>
+
+            <!-- Secondary Nodes (Smaller) -->
+            <div class="skill-node secondary-node float-anim fade-in tilt-card" style="animation-delay: 0.2s">
+                <div class="node-icon php"><i class="fab fa-php"></i></div>
+                <h4>PHP</h4>
+                <span>OOP, MVC</span>
+            </div>
+
+            <div class="skill-node secondary-node float-anim fade-in tilt-card" style="animation-delay: 0.4s">
+                <div class="node-icon js"><i class="fab fa-js"></i></div>
+                <h4>JavaScript</h4>
+                <span>ES6, Fetch</span>
+            </div>
+
+            <div class="skill-node secondary-node float-anim fade-in tilt-card" style="animation-delay: 0.6s">
+                <div class="node-icon git"><i class="fab fa-git-alt"></i></div>
+                <h4>Git/GitHub</h4>
+                <span>CI/CD Basics</span>
             </div>
         </div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
+    <!-- ===== PROJECTS (SYSTEMS) ===== -->
     <section class="projects section" id="projects">
         <div class="section-head fade-in">
-            <h2><span class="gradient-text">Featured</span> Projects</h2>
+            <h2><span class="gradient-text">Deployed</span> Systems</h2>
             <div class="section-line"></div>
-            <p class="section-sub">Capsules floating in the creative void</p>
+            <p class="section-sub">Production-ready capsules in the void</p>
         </div>
 
-        <!-- Main Project -->
-        <div class="main-project glass-card fade-in">
-            <div class="main-project-body">
-                <span class="badge"><i class="fas fa-graduation-cap"></i> Graduation Project</span>
-                <h3>Skin Analysis & E-commerce Platform</h3>
-                <p>Engineered a production-grade web application integrating <strong>Vision Transformer
-                        (ViT-B/16)</strong> deep learning model with native PHP e-commerce platform for personalized
-                    skincare recommendations.</p>
-                <div class="tags">
-                    <span>PHP (MVC)</span><span>Python</span><span>PyTorch</span>
-                    <span>Vision Transformer</span><span>MySQL</span><span>AJAX</span><span>Bootstrap 5</span>
+        <div class="project-space">
+            <!-- Main Featured Project (Architectural Focus) -->
+            <div class="featured-capsule glass-card fade-in tilt-card">
+                <div class="fc-visual">
+                    <div class="data-ring dr-1"></div>
+                    <div class="data-ring dr-2"></div>
+                    <i class="fas fa-project-diagram fc-icon float-subtle"></i>
                 </div>
-                <div class="features-grid">
-                    <div>✦ 85%+ AI prediction accuracy</div>
-                    <div>✦ Multi-currency support (JOD/USD)</div>
-                    <div>✦ Transaction-safe checkout (ACID)</div>
-                    <div>✦ 8-table normalized database</div>
-                    <div>✦ Admin dashboard with analytics</div>
-                    <div>✦ AJAX-based live search & cart</div>
-                </div>
-                <div class="project-btns">
-                    <a href="https://github.com/Moayad-77/skin-analysis-ecommerce" target="_blank"
-                        class="btn-glow primary"><i class="fab fa-github"></i> View on GitHub</a>
-                    <a href="https://github.com/Moayad-77/skin-analysis-ecommerce#readme" target="_blank"
-                        class="btn-glow secondary"><i class="fas fa-book-open"></i> Documentation</a>
-                </div>
-            </div>
-            <div class="main-project-visual">
-                <div class="hologram">
-                    <div class="holo-ring hr-1"></div>
-                    <div class="holo-ring hr-2"></div>
-                    <div class="holo-ring hr-3"></div>
-                    <div class="holo-icon">🔬</div>
-                </div>
-            </div>
-        </div>
+                <div class="fc-content">
+                    <div class="tag-row">
+                        <span class="api-tag">REST API</span>
+                        <span class="ai-tag">Machine Learning</span>
+                    </div>
+                    <h3>Intelligent E-Commerce Architecture</h3>
+                    <p>Engineered a robust backend system that integrates a <strong>PyTorch Vision Transformer
+                            (ViT)</strong> model with a custom PHP/MySQL transactional core. Designed for high accuracy
+                        (85%+) asynchronous image processing and secure financial transactions.</p>
 
-        <!-- Small Projects -->
-        <div class="projects-row">
-            <div class="capsule glass-card fade-in float-anim" style="animation-delay: 0.1s">
-                <div class="capsule-emoji">🎨</div>
-                <h4>Personal Portfolio</h4>
-                <p>Modern responsive portfolio with immersive Antigravity design</p>
-                <div class="capsule-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                    <ul class="fluid-list">
+                        <li><i class="fas fa-check"></i> ACID-compliant checkout architecture</li>
+                        <li><i class="fas fa-check"></i> 8-table normalized database schema</li>
+                        <li><i class="fas fa-check"></i> Real-time AJAX bridging to AI inference</li>
+                    </ul>
+
+                    <div class="action-row">
+                        <a href="https://github.com/Moayad-77/skin-analysis-ecommerce" target="_blank"
+                            class="btn-glow primary"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
             </div>
-            <div class="capsule glass-card fade-in float-anim" style="animation-delay: 0.2s">
-                <div class="capsule-emoji">📋</div>
-                <h4>Task Manager</h4>
-                <p>Full-stack app with user authentication & CRUD operations</p>
-                <div class="capsule-tags"><span>Java</span><span>Spring</span><span>MySQL</span></div>
-            </div>
-            <div class="capsule glass-card fade-in float-anim" style="animation-delay: 0.3s">
-                <div class="capsule-emoji">📊</div>
-                <h4>Data Dashboard</h4>
-                <p>Interactive charts and real-time data visualization</p>
-                <div class="capsule-tags"><span>JS</span><span>Chart.js</span><span>PHP</span></div>
+
+            <!-- Secondary Floating Capsules -->
+            <div class="capsule-cluster">
+                <div class="mini-capsule glass-card float-anim fade-in tilt-card" style="animation-delay: 0.1s">
+                    <div class="mc-icon"><i class="fas fa-tasks"></i></div>
+                    <div class="mc-text">
+                        <h4>Task Automation API</h4>
+                        <p>A full-stack implementation demonstrating secure JWT authentication, efficient CRUD, and
+                            scalable data retrieval.</p>
+                        <div class="tech-dots">
+                            <span class="dot tooltip" title="Java"></span>
+                            <span class="dot tooltip" title="Spring Boot"></span>
+                            <span class="dot tooltip" title="SQL"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mini-capsule glass-card float-anim fade-in tilt-card" style="animation-delay: 0.2s">
+                    <div class="mc-icon"><i class="fas fa-chart-network"></i></div>
+                    <div class="mc-text">
+                        <h4>Real-Time Dashboard</h4>
+                        <p>Dynamic async data pipeline visualizing complex metrics without blocking the main server
+                            thread.</p>
+                        <div class="tech-dots">
+                            <span class="dot tooltip" title="JavaScript"></span>
+                            <span class="dot tooltip" title="API"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
+    <!-- ===== CONTACT (PING) ===== -->
     <section class="contact section" id="contact">
         <div class="section-head fade-in">
-            <h2><span class="gradient-text">Get in</span> Touch</h2>
+            <h2><span class="gradient-text">Open</span> Connection</h2>
             <div class="section-line"></div>
-            <p class="section-sub">Transmit a signal across the cosmos</p>
+            <p class="section-sub">Send a POST request to my endpoints</p>
         </div>
-        <div class="contact-grid">
-            <div class="contact-left">
-                <div class="contact-card glass-card fade-in">
-                    <div class="cc-icon"><i class="fas fa-envelope"></i></div>
-                    <div>
-                        <h4>Email</h4>
-                        <p>moyadalshawesh@gmail.com</p>
-                    </div>
+
+        <div class="contact-fluid">
+            <!-- Terminal-style contact info -->
+            <div class="terminal-card glass-card fade-in tilt-card">
+                <div class="term-header">
+                    <span class="btn red"></span><span class="btn yellow"></span><span class="btn green"></span>
+                    <span class="term-title">moayad@server:~$ info</span>
                 </div>
-                <div class="contact-card glass-card fade-in" style="animation-delay: 0.1s">
-                    <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div>
-                        <h4>Location</h4>
-                        <p>Amman, Jordan</p>
+                <div class="term-body">
+                    <p><span class="prompt">></span> curl -I https://api.moayad.dev/contact</p>
+                    <p class="response">HTTP/2 200 OK</p>
+                    <p class="response">Email: <strong>moyadalshawesh@gmail.com</strong></p>
+                    <p class="response">Location: <strong>Amman, Jordan</strong></p>
+                    <p class="response">Phone: <strong>+962 78 7779 133</strong></p>
+                    <br>
+                    <p><span class="prompt">></span> fetch_links()</p>
+                    <div class="term-links">
+                        <a href="https://github.com/Moayad-77" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/moayad-alshawesh-877495342" target="_blank"><i
+                                class="fab fa-linkedin"></i> LinkedIn</a>
                     </div>
-                </div>
-                <div class="contact-card glass-card fade-in" style="animation-delay: 0.2s">
-                    <div class="cc-icon"><i class="fas fa-phone"></i></div>
-                    <div>
-                        <h4>Phone</h4>
-                        <p>+962 78 7779 133</p>
-                    </div>
-                </div>
-                <div class="social-row fade-in" style="animation-delay: 0.3s">
-                    <a href="https://github.com/Moayad-77" target="_blank" class="social-btn" aria-label="GitHub"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/moayad-alshawesh-877495342" target="_blank" class="social-btn"
-                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://wa.me/962787779133" target="_blank" class="social-btn" aria-label="WhatsApp"><i
-                            class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:moyadalshawesh@gmail.com" class="social-btn" aria-label="Email"><i
-                            class="fas fa-envelope"></i></a>
                 </div>
             </div>
-            <form class="contact-form glass-card fade-in" id="contact-form" action="https://formspree.io/f/xqelgaar"
-                method="POST">
-                <div class="field">
-                    <input type="text" id="name" name="name" required placeholder=" ">
-                    <label for="name">Your Name</label>
+
+            <!-- Form -->
+            <form class="fluid-form glass-card fade-in tilt-card" id="contact-form"
+                action="https://formspree.io/f/xqelgaar" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" id="name" required placeholder=" " autocomplete="off">
+                    <label>String visitorName;</label>
+                    <div class="input-glow"></div>
                 </div>
-                <div class="field">
-                    <input type="email" id="email" name="email" required placeholder=" ">
-                    <label for="email">Your Email</label>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" required placeholder=" " autocomplete="off">
+                    <label>String replyEndpoint;</label>
+                    <div class="input-glow"></div>
                 </div>
-                <div class="field">
-                    <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-                    <label for="message">Your Message</label>
+                <div class="form-group">
+                    <textarea name="message" id="message" rows="4" required placeholder=" "></textarea>
+                    <label>String payloadData;</label>
+                    <div class="input-glow"></div>
                 </div>
-                <button type="submit" class="btn-glow primary" id="submit-btn">
-                    <i class="fas fa-paper-plane"></i> Transmit Message
+                <button type="submit" class="transmit-btn float-subtle" id="submit-btn">
+                    await SendAsync();
                 </button>
             </form>
         </div>
@@ -327,15 +319,9 @@
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="footer-socials">
-            <a href="https://github.com/Moayad-77" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/moayad-alshawesh-877495342" target="_blank" class="social-btn"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="https://wa.me/962787779133" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:moyadalshawesh@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
-        </div>
+        <div class="footer-line"></div>
         <p>&copy; 2026 Moayad Hussam Alshawesh</p>
-        <p class="footer-sub">Designed in zero gravity ✦</p>
+        <p class="footer-hex">SYSTEM_HALT // GRAVITY_REMOVED</p>
     </footer>
 
     <script src="script.js"></script>
